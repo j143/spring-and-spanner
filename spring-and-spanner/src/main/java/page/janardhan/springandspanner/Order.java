@@ -6,7 +6,7 @@ import lombok.Data;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.*;
 
 @Table(name="orders")
-@data
+@Data
 public class Order {
     @PrimaryKey
     @Column(name="order_id")
