@@ -1,4 +1,4 @@
-package page.janardhan.labs;
+package page.janardhan.springandspanner;
 
 import org.springframework.cloud.gcp.data.spanner.repository.*;
 import org.springframework.stereotype.*;

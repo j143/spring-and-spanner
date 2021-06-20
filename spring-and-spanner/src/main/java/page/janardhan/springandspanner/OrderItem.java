@@ -1,4 +1,4 @@
-package page.janardhan.labs;
+package page.janardhan.springandspanner;
 
 import lombok.Data;
 import org.springframework.cloud.gcp.data.spanner.core.mapping.*;

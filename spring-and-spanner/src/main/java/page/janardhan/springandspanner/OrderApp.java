@@ -1,4 +1,4 @@
-package page.janardhan.labs;
+package page.janardhan.springandspanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

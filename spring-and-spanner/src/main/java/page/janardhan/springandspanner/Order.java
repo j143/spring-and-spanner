@@ -1,4 +1,4 @@
-package page.janardhan.labs;
+package page.janardhan.springandspanner;
 
 import java.time.LocalDateTime;
 import java.util.List;
