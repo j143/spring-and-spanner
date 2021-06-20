@@ -111,9 +111,24 @@ jobs:
       # https://cloud.google.com/spanner/docs/data-definition-language#naming_conventions
       - name: Create Table
         run: |
-          gcloud spanner databases ddl update demo \
-            --instance=cloudspanner-lab  \
-            --ddl='CREATE TABLE Songs ( SongId STRING(1024) NOT NULL, Title STRING(1024), Year INT64, Peak INT64 ) PRIMARY KEY (SongId);'
+          cat << EOF > schema.ddl
+          CREATE TABLE orders (
+            order_id STRING(36) NOT NULL,
+            description STRING(255),
+            creation_timestamp TIMESTAMP,
+          ) PRIMARY KEY (order_id);
+          
+          CREATE TABLE order_items (
+            order_id STRING(36) NOT NULL,
+            order_item_id STRING(36) NOT NULL,
+            description STRING(255),
+            quantity INT64,
+          ) PRIMARY KEY (order_id, order_item_id),
+            INTERLEAVE IN PARENT orders ON DELETE CASCADE;
+          EOF
+          gcloud spanner databases ddl update orders \
+            --instance=spanner-instance  \
+            --ddl='$(<schema.ddl)'
           
         
 #       - run: java -jar spanner-with-java/target/spanner-with-java-1.0-SNAPSHOT-jar-with-dependencies.jar
