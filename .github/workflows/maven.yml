@@ -131,7 +131,7 @@ jobs:
             --ddl="$(<schema.ddl)"
           
         
-      - run: ./mvnw spring-boot:run
+      - run: $GITHUB_WORKSPACE/spring-and-spanner/mvnw spring-boot:run
         env:
           SPANNER_EMULATOR_HOST: localhost:9010
       
