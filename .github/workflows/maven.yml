@@ -128,7 +128,7 @@ jobs:
           EOF
           gcloud spanner databases ddl update orders \
             --instance=spanner-instance  \
-            --ddl='$(<schema.ddl)'
+            --ddl="$(<schema.ddl)"
           
         
       - run: ./mvnw spring-boot:run
