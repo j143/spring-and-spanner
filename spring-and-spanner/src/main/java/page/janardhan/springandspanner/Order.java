@@ -20,15 +20,5 @@ public class Order {
     // to create one to many relationship with order items
     @Interleaved
     private List<OrderItem> items;
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-//
-//    public void setTimestamp(LocalDateTime timestamp) {
-//        this.timestamp = timestamp;
-//    }
-//
-//    public void getItems() {
-//    }
+
 }

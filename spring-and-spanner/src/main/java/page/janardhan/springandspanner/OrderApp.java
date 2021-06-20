@@ -37,7 +37,12 @@ class OrderController {
         // Let's use UUID on new orders
         order.setId(UUID.randomUUID().toString());
         order.setTimestamp(LocalDateTime.now());
-        
+
+        order.getItems().forEach(item -> {
+            // Assign parent Id, generate one for the child item
+            item.setOrderId(order.getId());
+            item.setOrderItemId(UUID.randomUUID().toString());
+        });
         return "1";
     }
 
