@@ -132,8 +132,9 @@ jobs:
           
         
       - run: |
-            chmod +x $GITHUB_WORKSPACE/spring-and-spanner/mvnw
-            mvn spring-boot:run
+            cd $GITHUB_WORKSPACE/spring-and-spanner
+            chmod +x ./mvnw
+            ./mvnw spring-boot:run
         env:
           SPANNER_EMULATOR_HOST: localhost:9010
       
